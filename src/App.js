@@ -5,6 +5,7 @@ import AstrologerCards from './components/AstrologerCards';
 import Css from './App.css'
 import TheCircle from './components/TheCircle';
 import Reviews from './components/Reviews';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     </div>
     <TheCircle/>
     <Reviews/>
+    <Footer/>
     </ChakraProvider>
   );
 }

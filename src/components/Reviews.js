@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Box, Text, Badge } from '@chakra-ui/react';
 import SwiperCore, { EffectCoverflow, Pagination, Navigation } from "swiper";
 
 SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
@@ -68,7 +69,7 @@ const Reviews = () => {
   
     return (
       <div className="container video">
-        <h1 className="heading">Flower Gallery</h1>
+        <h1 className="heading">User Review</h1>
         <Swiper
           effect={'coverflow'}
           grabCursor={true}
@@ -95,35 +96,45 @@ const Reviews = () => {
           className="swiper_container"
           onSlideChange={handleSlideChange}
         >
-          {reviews.map((review) => (
-            <SwiperSlide key={review.id}>
-              <div className="review">
-                <h2>{review.name}</h2>
-                <p>{review.text}</p>
-                <div className="rating">{review.rating}</div>
-              </div>
-            </SwiperSlide>
-          ))}
+           <div className="swiper-button-prev slider-arrow" onClick={prevReview}>
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </div>
+  {reviews.map((review) => (
+  <SwiperSlide key={review.id}>
+   <Box p={4} borderWidth="1px" borderRadius="lg" mt={6} className="reviewbox">
+  <Text fontSize="5xl" fontWeight="bold" textAlign="center">
+    {review.name}
+  </Text>
+  <Text fontSize="3x2" textAlign="center">
+    {review.text}
+  </Text>
+  <Badge mt={2}  textAlign="center" fontSize="3x2">
+    Stars:{review.rating}
+  </Badge>
+</Box>
+
+  </SwiperSlide>
+))}
+           <div className="swiper-button-next slider-arrow" onClick={nextReview} >
+    <ion-icon name="arrow-forward-outline"></ion-icon>
+  </div>
         </Swiper>
+      
         <div className="slider-controler">
-          <div className="swiper-button-prev slider-arrow" onClick={prevReview}>
-            <ion-icon name="arrow-back-outline"></ion-icon>
-          </div>
-          <div className="user-image-wrapper" style={{display:"none"}}>
-            {reviews.map((review, index) => (
-              <img
-                key={review.id}
-                className={`user user-image ${index === currentReviewIndex ? '' : 'inactive'}`}
-                src={review.userImage}
-                alt={`User ${index + 1}`}
-              />
-            ))}
-          </div>
-          <div className="swiper-button-next slider-arrow" onClick={nextReview}>
-            <ion-icon name="arrow-forward-outline"></ion-icon>
-          </div>
-          <div className="swiper-pagination"></div>
-        </div>
+  <div className="user-image-wrapper" style={{paddingBottom: "20px", display:'none'}}>
+    {reviews.map((review, index) => (
+      <img
+        key={review.id}
+        className={`user user-image ${index === currentReviewIndex ? '' : 'inactive'}`}
+        src={review.userImage}
+        alt={`User ${index + 1}`}
+      />
+    ))}
+  </div>
+  
+ 
+  <div className="swiper-pagination page"> </div>
+</div>
       </div>
     );
   };

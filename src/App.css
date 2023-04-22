@@ -70,9 +70,47 @@
     text-align: center;
     margin-bottom: 20px;
 }
-.user{
- width: 200px;
+
+.page{
+  width: 100%;
+  border: #000000;
 }
-.swiper-pagination-bullet {
-  width: 50px;
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  width: 10%;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal,.swiper-pagination-custom, .swiper-pagination-fraction {
+  min-width: 100%;
+  margin-top: -100px;
+}
+
+.reviewbox{
+background-color: rgb(255, 255, 255);
+width: 80%;
+font-size: larger;
+margin-top: -20px;
+margin-bottom: -40px;
+}
+.user-image {
+  border: 2px solid orange;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+.swiper_container{
+  height: 60vh;
+  margin-bottom: -10vh;
+}
+@media only screen and (max-width: 800px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}
+.form{
+  margin-top: 10px;
+  width: 25vh;
+  border-radius: 1vh;
+}
+.submit{
+  background-color: green;
 }
