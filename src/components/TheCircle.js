@@ -23,35 +23,21 @@ const ImageContent = () => {
     />
   );
 };
-//   const IconAndText = ({ icon, text }) => {
-//     return (
-//       <Box p="4">
-//         <Flex alignItems="center">
-//           <Box mr="4">
-//             <FontAwesomeIcon icon={icon} />
-//           </Box>
-//           <Box>
-//             <p>{text}</p>
-//           </Box>
-//         </Flex>
-//       </Box>
-//     );
-//   };
+
 const TheCircle = () => {
   const iconAndText = [
-    { icon: problem1, text: "Love and Relationships" },
-    { icon: problem2, text: "Career and Money" },
-    { icon: problem3, text: "Education and Learning" },
-    { icon: problem4, text: "Health and Wellness" },
-    { icon: problem5, text: "Business and Startups" },
-    { icon: problem6, text: "Legal and Court Cases" },
-    { icon: problem7, text: "Travel and Visa" },
-    { icon: problem8, text: "Family and Children" },
-    { icon: problem9, text: "Spirituality and Religion" },
-    { icon: problem10, text: "Other Personal Problems" },
+    { icon: problem1, text: "Love Related problem" },
+    { icon: problem2, text: "Marriage Problem" },
+    { icon: problem3, text: "Job/Business Problems " },
+    { icon: problem4, text: "Money Problem" },
+    { icon: problem5, text: "Education Problems" },
+    { icon: problem6, text: "Health Problems" },
+    { icon: problem7, text: "Grah Shanti" },
+    { icon: problem8, text: "Child Birth Issue" },
+    { icon: problem9, text: "Husband Wife Problems" },
+    { icon: problem10, text: "Lucky Number/Color" },
   ];
-  //       const leftIconAndText = iconAndText.slice(0, 5);
-  //   const rightIconAndText = iconAndText.slice(5);
+ 
   return (
     <div className="circle">
       <h1 className="heading">Many Problem One Solution</h1>
